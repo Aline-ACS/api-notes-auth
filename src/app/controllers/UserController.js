@@ -42,7 +42,7 @@ class UserController {
   async update(req, res) {
     try {
       const { uid } = req.params;
-      const { email, oldPassword } = req.body;
+      const { phone, email, oldPassword } = req.body;
 
       const user = await User.findByPk(uid);
 
@@ -55,7 +55,7 @@ class UserController {
       }
 
       const { name } = await user.update(req.body);
-      return res.json({ user: { uid, name, email } });
+      return res.json({ user: { uid, name, email, phone } });
     } catch (error) {
       return res.json({ error });
     }
