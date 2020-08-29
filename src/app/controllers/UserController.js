@@ -6,13 +6,6 @@ class UserController {
     try {
       const users = await User.findAll({
         attributes: ['uid', 'name', 'email', 'phone'],
-        include: [
-          {
-            model: Card,
-            as: 'cards',
-            attributes: ['uid', 'title', 'content', 'date', 'hour'],
-          },
-        ],
       });
 
       return res.json({ users });
