@@ -21,7 +21,7 @@ routes.post('/login', AuthController.store);
 routes.post('/users', UserController.store);
 routes.get('/users', UserController.index);
 
-routes.use(authMiddleware);
+// routes.use(authMiddleware);
 
 // ROUTES USERS (AUTH)
 routes.get('/users/:uid', UserController.show);
