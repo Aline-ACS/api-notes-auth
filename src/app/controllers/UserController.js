@@ -28,7 +28,7 @@ class UserController {
 
       return res.status(201).json({ user });
     } catch (error) {
-      return res.status(404).json({ message: 'Erro ao cadastrar usuário' });
+      return res.json({ message: 'Erro ao cadastrar usuário' });
     }
   }
 
